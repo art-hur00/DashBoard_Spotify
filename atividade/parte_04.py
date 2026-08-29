@@ -11,12 +11,20 @@ from main import df, plt
 
 """
 
-print(df["popularity"].describe())
-# Média	            33,23
-# Mediana	        35
-# Mínimo	        0
-# Máximo	        100
-# Desvio-padrão	    22,30
+# Média
+print(df["popularity"].mean().round(2))  # 33.24
+
+# Mediana
+print(df["popularity"].median())  # 35
+
+# Mínimo
+print(df["popularity"].min())    # 0
+
+# Máximo
+print(df["popularity"].max())     # 100
+
+# Desvio-padrão
+print(df["popularity"].std().round(2))     # 22.31
 
 # barras
 plt.hist(df["popularity"], bins=20, edgecolor="black")
@@ -34,3 +42,6 @@ plt.show()
 # observação:
 # metade central das musicas possui mais ou menos uma popularidade entre 17 e 50,
 # existe uma concentração bastante relevante de popularidade 0, perto de 2.000
+
+# uma musica com popularidade 0 não significa que ela nunca foi ouvida
+# esse coluna representa o valor de popularidade registrado na base de dados
