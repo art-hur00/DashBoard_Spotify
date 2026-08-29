@@ -25,9 +25,9 @@ print(percentual_nulos[percentual_nulos > 0])
 
 quantidade_nulos = percentual_nulos[percentual_nulos > 0]
 quantidade_nulos.plot(kind="bar")
-plt.ylabel("Percentual de valores ausentes (%)")
-plt.xlabel("Coluna")
-plt.title("Valores ausentes por coluna")
+plt.ylabel("rercentual de valores ausentes")
+plt.xlabel("coluna")
+plt.title("valores ausentes por coluna")
 plt.xticks(rotation=45)
 plt.show()
 
