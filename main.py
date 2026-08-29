@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import matplotlib.pyplot
 from pathlib import Path
 
 # mostrar todas as colunas da tabela completa
@@ -12,3 +12,4 @@ BASE_DIR = Path(__file__).resolve().parent
 arquivo = BASE_DIR / "dataset.csv"
 
 df = pd.read_csv(arquivo)
+plt = matplotlib.pyplot
