@@ -1,4 +1,7 @@
-Eu investiguei se a danceability das músicas possui relação com a popularidade.
-Para isso, calculei a correlação entre as colunas danceability e popularity e obtive aproximadamente 0,035, além de observar a relação em um gráfico de dispersão.
-Como esse valor é muito próximo de zero, não foi observada uma relação linear relevante entre as duas variáveis.
-O principal cuidado é lembrar que correlação não significa causalidade, portanto não podemos afirmar que a danceability causa aumento ou redução da popularidade.
+## Fechamento
+
+Uma descoberta interessante foi encontrar músicas com durações muito acima do padrão da base. Enquanto a duração mediana das faixas é de aproximadamente 3,55 minutos, a música mais longa encontrada possui cerca de 87 minutos.
+
+Eu encontrei esse resultado analisando a coluna "duration_ms", convertendo os valores para minutos e ordenando as faixas pela duração. Ao verificar os nomes das músicas mais longas, percebi que várias eram DJ mixes ou mixes contínuos.
+
+O principal cuidado ao interpretar esse resultado é não considerar automaticamente todo valor extremo como erro. Nesse caso, apesar de as durações serem muito diferentes da maioria das músicas, elas podem ser válidas por se tratarem de mixes longos.
