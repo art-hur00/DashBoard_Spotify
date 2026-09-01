@@ -1,4 +1,5 @@
 from main import df, plt
+import numpy as np
 
 """
 
@@ -28,6 +29,21 @@ print(df["duration_min"].max().round())     # 87 min
 
 # Desvio-padrão
 print(df["duration_min"].std().round())     # 2 min
+
+# scatterplot
+plt.figure(figsize=(10, 6))
+plt.scatter(
+    df["duration_min"],
+    df["popularity"],
+    alpha=0.2,
+    color="green"
+)
+plt.xlabel("Duração (minutos)")
+plt.ylabel("Popularidade")
+plt.title("Duração x Popularidade")
+plt.xticks(np.arange(0, 91, 10))
+plt.grid(axis="x", alpha=0.3)
+plt.show()
 
 # boxplot
 plt.figure(figsize=(6, 5))
