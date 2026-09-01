@@ -11,31 +11,49 @@ from main import df, plt
 
 """
 
+# criando coluna de duração de ms para minutos
+df["duration_min"] = df["duration_ms"] / 60000
+
 # Média
-print(df["duration_ms"].mean().round())  # 228.029ms
+print(df["duration_min"].mean().round())  # 4 min
 
 # Mediana
-print(df["duration_ms"].median().round())  # 212.906ms
+print(df["duration_min"].median().round())  # 4 min
 
 # Mínimo
-print(df["duration_ms"].min().round())    # 0ms
+print(df["duration_min"].min().round())    # 0 min
 
 # Máximo
-print(df["duration_ms"].max().round())     # 5.237.295ms
+print(df["duration_min"].max().round())     # 87 min
 
 # Desvio-padrão
-print(df["duration_ms"].std().round())     # 107.298ms
+print(df["duration_min"].std().round())     # 2 min
 
 # boxplot
-plt.boxplot(df["duration_ms"])
-plt.ylabel("duração (ms)")
-plt.title("boxplot da duração das musicas")
+plt.figure(figsize=(6, 5))
+plt.boxplot(
+    df["duration_min"],
+    patch_artist=True,
+    boxprops=dict(facecolor="lightblue", edgecolor="black"),
+    medianprops=dict(color="red", linewidth=2),
+    whiskerprops=dict(color="black"),
+    capprops=dict(color="black"),
+    flierprops=dict(
+        marker="o",
+        markerfacecolor="lightgreen",
+        markersize=5
+    )
+)
+plt.ylabel("Duração (min)", fontsize=12)
+plt.title("Boxplot da duração das músicas", fontsize=14)
+plt.grid(axis="y", alpha=0.3)
 plt.show()
 # valores acima de aproximadamente 300.000ms ou entre 5-6 minutos,
 # aparecem como outliers no boxplot
 
-# criando coluna de duração de ms para minutos
-df["duration_min"] = df["duration_ms"] / 60000
+# como metade das músicas está concentrada entre aproximadamente 2,9 e 4,4 minutos,
+# a caixa fica pequena. Os pontos acima dela são estatisticamente extremos,
+# mas não necessariamente erros
 
 # 5 faixas mais longas
 print(
