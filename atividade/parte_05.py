@@ -45,6 +45,7 @@ plt.boxplot(
     )
 )
 plt.ylabel("Duração (min)", fontsize=12)
+plt.xticks([])
 plt.title("Boxplot da duração das músicas", fontsize=14)
 plt.grid(axis="y", alpha=0.3)
 plt.show()
